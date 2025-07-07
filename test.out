@@ -1,0 +1,19 @@
+main:
+	pushq	%rbp
+	movq	%rsp, %rbp
+	movl	$main.size, %eax
+	subq	%rax, %rsp
+	movl	a, %eax
+	negl	%eax
+
+main.exit:
+	movq	%rbp, %rsp
+	popq	%rbp
+	ret
+
+	.set	main.size, 0
+	.globl	main
+
+	.comm	a, 4
+	.comm	b, 4
+	.comm	c, 4
